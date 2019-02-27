@@ -1,12 +1,16 @@
-import time
+import atexit
+from random import randint
 from sense_hat import SenseHat
+import time
 
 sense = SenseHat()
 nmd = 'NMD'
-counter = 0
 
 while True:
     for var in nmd:
-        sense.show_letter(var)
+        sense.
+        sense.show_letter(var, text_colour = [randint(0, 255), randint(0, 255), randint(0, 255)])
         time.sleep(1)
     time.sleep(2)
+
+atexit.register(sense.clear())
