@@ -9,7 +9,7 @@ zero = (0, 0, 0)
 red = (250, 0, 0)
 skin = (240, 100, 75)
 blue = (0, 0, 255)
-brown = (200, 80, 40)
+brown = (100, 50, 30)
 
 normalPose = [
     zero, zero, red, red, red, zero, zero, zero,
