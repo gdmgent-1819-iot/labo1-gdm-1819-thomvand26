@@ -1,5 +1,6 @@
 from sense_hat import SenseHat
 import sys
+import time
 
 sense = SenseHat()
 
@@ -42,6 +43,7 @@ while True:
     try:
         normal()
         sense.stick.direction_up = jump
+        time.sleep(1)
     except KeyboardInterrupt:
         sense.clear()
         sys.exit()
