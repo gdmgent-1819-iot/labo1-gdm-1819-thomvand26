@@ -1,5 +1,6 @@
 from random import randint
 from sense_hat import SenseHat
+import sys
 import time
 
 sense = SenseHat()
@@ -13,3 +14,4 @@ while True:
         time.sleep(2)
     except KeyboardInterrupt:
         sense.clear()
+        sys.exit()
