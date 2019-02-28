@@ -5,9 +5,9 @@ import time
 
 sense = SenseHat()
 rectColour = (150,150,150)
-isGrowing = False
+isGrowing = True
 
-currentProperties = [1,1,6,6]
+currentProperties = [3,3,2,2]
 
 def createRect(originX, originY, width, height):
 
@@ -19,12 +19,6 @@ def createRect(originX, originY, width, height):
                         sense.set_pixel(x, y, rectColour)
                     elif (x == originX) or (x == originY + width - 1):
                         sense.set_pixel(x, y, rectColour)
-
-# def grow(properties):
-#     if properties[2] < 8:
-#         return [(properties[0] - 1), (properties[1] - 1), (properties[2] + 2), (properties[3] + 2)]
-#     else:
-#         isGrowing = False
 
 def grow():
     global isGrowing
@@ -47,6 +41,9 @@ def shrink():
         currentProperties[3] -= 2
     else:
         isGrowing = True
+
+
+createRect(currentProperties[0], currentProperties[1], currentProperties[2], currentProperties[3])
 
 while True:
     try:
