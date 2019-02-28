@@ -30,23 +30,21 @@ createRect(1,1,6,6)
 
 def grow():
     if currentProperties[2] < 8:
-        currentProperties[0] - 1
-        currentProperties[1] - 1
-        currentProperties[2] + 2
-        currentProperties[3] + 2
+        currentProperties[0] -= 1
+        currentProperties[1] -= 1
+        currentProperties[2] += 2
+        currentProperties[3] += 2
     else:
         isGrowing = False
 
 def shrink():
     if currentProperties[2] < 8:
-        currentProperties[0] + 1
-        currentProperties[1] + 1
-        currentProperties[2] - 2
-        currentProperties[3] - 2
+        currentProperties[0] += 1
+        currentProperties[1] += 1
+        currentProperties[2] -= 2
+        currentProperties[3] -= 2
     else:
         isGrowing = False
-
-t = 0
 
 while True:
     try:
