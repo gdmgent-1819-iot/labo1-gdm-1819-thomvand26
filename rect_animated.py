@@ -46,15 +46,17 @@ def shrink():
     else:
         isGrowing = False
 
+t = 0
 
 while True:
     try:
+        t++
         if isGrowing:
             grow()
         else:
             shrink()
             
-        createRect(currentProperties[0],currentProperties[1],currentProperties[2],currentProperties[3])
+        createRect(t,t,2,2)
         time.sleep(0.5)
     except KeyboardInterrupt:
         sense.clear()
