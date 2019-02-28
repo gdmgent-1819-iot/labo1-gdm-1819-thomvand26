@@ -29,6 +29,8 @@ def createRect(originX, originY, width, height):
 createRect(1,1,6,6)
 
 def grow():
+    global isGrowing
+
     if currentProperties[2] < 8:
         currentProperties[0] -= 1
         currentProperties[1] -= 1
@@ -38,6 +40,8 @@ def grow():
         isGrowing = False
 
 def shrink():
+    global isGrowing
+    
     if currentProperties[2] < 8:
         currentProperties[0] += 1
         currentProperties[1] += 1
