@@ -54,8 +54,8 @@ while True:
         else:
             shrink()
             
-            createRect(currentProperties[0],currentProperties[1],currentProperties[2],currentProperties[3])
-            time.sleep(0.5)
+        createRect(currentProperties[0],currentProperties[1],currentProperties[2],currentProperties[3])
+        time.sleep(0.5)
     except KeyboardInterrupt:
         sense.clear()
         sys.exit()
