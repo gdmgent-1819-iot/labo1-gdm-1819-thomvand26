@@ -5,7 +5,7 @@ import time
 
 sense = SenseHat()
 rectColour = (150,150,150)
-isGrowing = True
+isGrowing = False
 
 currentProperties = [1,1,6,6]
 
