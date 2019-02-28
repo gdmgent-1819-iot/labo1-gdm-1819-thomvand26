@@ -58,6 +58,7 @@ while True:
             
         createRect(t,t,2,2)
         time.sleep(0.5)
+        sense.clear()
     except KeyboardInterrupt:
         sense.clear()
         sys.exit()
