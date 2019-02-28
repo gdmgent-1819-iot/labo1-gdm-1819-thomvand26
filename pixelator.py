@@ -7,13 +7,13 @@ sense = SenseHat()
 
 while True:
     try:
-        for y in range(1,8):
-            for x in range(1,8):
+        for y in range(8):
+            for x in range(8):
                 sense.set_pixel(x, y, randint(0, 255), randint(0, 255), randint(0, 255))
                 time.sleep(0.2)
                 sense.set_pixel(x, y, 0, 0, 0)
 
-                if x + y == 16:
+                if x + y == 18:
                     x = 0
                     y = 0
     except KeyboardInterrupt:
