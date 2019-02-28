@@ -44,6 +44,8 @@ def shrink():
 
 
 createRect(currentProperties[0], currentProperties[1], currentProperties[2], currentProperties[3])
+time.sleep(0.5)
+sense.clear()
 
 while True:
     try:
