@@ -12,9 +12,9 @@ currentProperties = [1,1,6,6]
 def createRect(originX, originY, width, height):
 
     for y in range(8):
-        if originY <= y <= (originY + y):
+        if originY <= y < (originY + width):
             for x in range(8):
-                if originX <= x <= (originX + width):
+                if originX <= x < (originX + width):
                     if (y == originY) or (y == originY + height - 1):
                         sense.set_pixel(x, y, rectColour)
                     elif (x == originX) or (x == originY + width - 1):
