@@ -50,13 +50,12 @@ t = 0
 
 while True:
     try:
-        t += 1
         if isGrowing:
             grow()
         else:
             shrink()
             
-        createRect(t,t,2,2)
+        createRect(currentProperties[0], currentProperties[1], currentProperties[2], currentProperties[3])
         time.sleep(0.5)
         sense.clear()
     except KeyboardInterrupt:
