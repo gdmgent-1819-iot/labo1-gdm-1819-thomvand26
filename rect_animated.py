@@ -17,12 +17,12 @@ while True:
         #         if x + y == 18:
         #             x = 0
         #             y = 0
+        createRect(0,0,8,8)
         time.sleep(0.01)
     except KeyboardInterrupt:
         sense.clear()
         sys.exit()
 
-createRect(0,0,8,8)
 
 def createRect(originX, originY, width, height):
 
