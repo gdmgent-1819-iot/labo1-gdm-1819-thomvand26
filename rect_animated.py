@@ -8,7 +8,6 @@ rectColour = (150,150,150)
 isGrowing = True
 
 currentProperties = [3,3,2,2]
-createRect(3,3,2,2)
 
 def createRect(originX, originY, width, height):
 
@@ -26,6 +25,8 @@ def createRect(originX, originY, width, height):
 #         return [(properties[0] - 1), (properties[1] - 1), (properties[2] + 2), (properties[3] + 2)]
 #     else:
 #         isGrowing = False
+
+createRect(3,3,2,2)
 
 def grow():
     if currentProperties[2] < 8:
