@@ -7,6 +7,9 @@ sense = SenseHat()
 rectColour = (150,150,150)
 isGrowing = True
 
+currentProperties = [3,3,2,2]
+createRect(3,3,2,2)
+
 def createRect(originX, originY, width, height):
 
     for y in range(8):
@@ -18,30 +21,40 @@ def createRect(originX, originY, width, height):
                     elif (x == originX) or (x == originY + width - 1):
                         sense.set_pixel(x, y, rectColour)
 
-def grow(properties, ig):
-    if properties[2] < 8:
-        return [(properties[0] - 1), (properties[1] - 1), (properties[2] + 2), (properties[3] + 2)]
+# def grow(properties):
+#     if properties[2] < 8:
+#         return [(properties[0] - 1), (properties[1] - 1), (properties[2] + 2), (properties[3] + 2)]
+#     else:
+#         isGrowing = False
+
+def grow():
+    if currentProperties[2] < 8:
+        currentProperties[0] - 1
+        currentProperties[1] - 1
+        currentProperties[2] + 2
+        currentProperties[3] + 2
     else:
         isGrowing = False
 
-def shrink(properties, ig):
-    if properties[2] > 2:
-        return [(properties[0] + 1), (properties[1] + 1), (properties[2] - 2), (properties[3] - 2)]
+def shrink():
+    if currentProperties[2] < 8:
+        currentProperties[0] + 1
+        currentProperties[1] + 1
+        currentProperties[2] - 2
+        currentProperties[3] - 2
     else:
-        isGrowing = True
+        isGrowing = False
 
-currentProperties = [3,3,2,2]
-createRect(3,3,2,2)
 
 while True:
     try:
         if isGrowing:
-            currentProperties = grow(currentProperties, isGrowing)
+            grow()
         else:
-            currentProperties = shrink(currentProperties, isGrowing)
-
-        createRect(currentProperties[0],currentProperties[1],currentProperties[2],currentProperties[3])
-        time.sleep(0.5)
+            shrink()
+            
+            createRect(currentProperties[0],currentProperties[1],currentProperties[2],currentProperties[3])
+            time.sleep(0.5)
     except KeyboardInterrupt:
         sense.clear()
         sys.exit()
