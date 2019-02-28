@@ -13,7 +13,7 @@ while True:
                 time.sleep(0.2)
                 sense.set_pixel(y, x, 0, 0, 0)
 
-                if x + y = 14:
+                if x + y == 14:
                     x = 0
                     y = 0
     except KeyboardInterrupt:
