@@ -12,9 +12,9 @@ def createRect(originX, originY, width, height):
         if originY <= y <= (originY + y):
             for x in range(8):
                 if originX <= x <= (originX + width):
-                    if (y == originY) or (y == originY + height):
+                    if (y == originY) or (y == originY + height - 1):
                         sense.set_pixel(x, y, rectColour)
-                    elif (x == originX) or (x == originY + width):
+                    elif (x == originX) or (x == originY + width - 1):
                         sense.set_pixel(x, y, rectColour)
 
 while True:
