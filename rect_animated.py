@@ -17,6 +17,7 @@ while True:
         #         if x + y == 18:
         #             x = 0
         #             y = 0
+        time.sleep(0.01)
     except KeyboardInterrupt:
         sense.clear()
         sys.exit()
