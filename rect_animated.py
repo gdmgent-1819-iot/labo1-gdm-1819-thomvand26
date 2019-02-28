@@ -7,7 +7,7 @@ sense = SenseHat()
 rectColour = (150,150,150)
 isGrowing = True
 
-currentProperties = [3,3,2,2]
+currentProperties = [1,1,6,6]
 
 def createRect(originX, originY, width, height):
 
@@ -26,7 +26,7 @@ def createRect(originX, originY, width, height):
 #     else:
 #         isGrowing = False
 
-createRect(3,3,2,2)
+createRect(1,1,6,6)
 
 def grow():
     if currentProperties[2] < 8:
