@@ -50,7 +50,7 @@ t = 0
 
 while True:
     try:
-        t++
+        t += 1
         if isGrowing:
             grow()
         else:
