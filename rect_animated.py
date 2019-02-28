@@ -18,13 +18,13 @@ def createRect(originX, originY, width, height):
                     elif (x == originX) or (x == originY + width - 1):
                         sense.set_pixel(x, y, rectColour)
 
-def grow(properties):
+def grow(properties, ig):
     if properties[2] < 8:
         return [(properties[0] - 1), (properties[1] - 1), (properties[2] + 2), (properties[3] + 2)]
     else:
         isGrowing = False
 
-def shrink(properties):
+def shrink(properties, ig):
     if properties[2] > 2:
         return [(properties[0] + 1), (properties[1] + 1), (properties[2] - 2), (properties[3] - 2)]
     else:
@@ -36,13 +36,12 @@ createRect(3,3,2,2)
 while True:
     try:
         if isGrowing:
-            currentProperties = grow(currentProperties)
-            createRect(currentProperties[0],currentProperties[1],currentProperties[2],currentProperties[3])
-            time.sleep(0.5)
+            currentProperties = grow(currentProperties, isGrowing)
         else:
-            currentProperties = shrink(currentProperties)
-            createRect(currentProperties[0],currentProperties[1],currentProperties[2],currentProperties[3])
-            time.sleep(0.5)
+            currentProperties = shrink(currentProperties, isGrowing)
+
+        createRect(currentProperties[0],currentProperties[1],currentProperties[2],currentProperties[3])
+        time.sleep(0.5)
     except KeyboardInterrupt:
         sense.clear()
         sys.exit()
