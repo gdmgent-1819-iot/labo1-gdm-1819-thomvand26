@@ -40,13 +40,13 @@ def grow():
 def shrink():
     global isGrowing
 
-    if currentProperties[2] < 8:
+    if currentProperties[2] > 2:
         currentProperties[0] += 1
         currentProperties[1] += 1
         currentProperties[2] -= 2
         currentProperties[3] -= 2
     else:
-        isGrowing = False
+        isGrowing = True
 
 while True:
     try:
