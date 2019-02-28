@@ -5,6 +5,7 @@ import time
 
 sense = SenseHat()
 rectColour = (150,150,150)
+isGrowing = True
 
 def createRect(originX, originY, width, height):
 
@@ -17,18 +18,31 @@ def createRect(originX, originY, width, height):
                     elif (x == originX) or (x == originY + width - 1):
                         sense.set_pixel(x, y, rectColour)
 
+def grow(properties):
+    if properties[2] < 8:
+        return [(properties[0] - 1), (properties[1] - 1), (properties[2] + 2), (properties[3] + 2)]
+    else:
+        isGrowing = False
+
+def shrink(properties):
+    if properties[2] > 2:
+        return [(properties[0] + 1), (properties[1] + 1), (properties[2] - 2), (properties[3] - 2)]
+    else:
+        isGrowing = True
+
+currentProperties = [3,3,2,2]
+createRect(3,3,2,2)
+
 while True:
     try:
-        # for y in range(8):
-        #     for x in range(8):
-        #         sense.set_pixel(x, y, randint(0, 255), randint(0, 255), randint(0, 255))
-        #         time.sleep(0.2)
-        #         sense.set_pixel(x, y, 0, 0, 0)
-
-        #         if x + y == 18:
-        #             x = 0
-        #             y = 0
-        createRect(0,0,8,8)
+        if isGrowing:
+            currentProperties = grow(currentProperties)
+            createRect(currentProperties[0],currentProperties[1],currentProperties[2],currentProperties[3])
+            time.sleep(0.5)
+        else:
+            currentProperties = shrink(currentProperties)
+            createRect(currentProperties[0],currentProperties[1],currentProperties[2],currentProperties[3])
+            time.sleep(0.5)
     except KeyboardInterrupt:
         sense.clear()
         sys.exit()
