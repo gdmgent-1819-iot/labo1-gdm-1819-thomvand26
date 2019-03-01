@@ -5,11 +5,12 @@ import time
 
 sense = SenseHat()
 
-colour1 = (randint(0, 255), randint(0, 255), randint(0, 255))
-colour2 = (randint(0, 255), randint(0, 255), randint(0, 255))
 
 while True:
     try:
+        colour1 = (randint(0, 255), randint(0, 255), randint(0, 255))
+        colour2 = (randint(0, 255), randint(0, 255), randint(0, 255))
+
         for y in range(8):
             for x in range(4):
                 randNum = randint(0,1)
@@ -19,7 +20,8 @@ while True:
                 else:
                     sense.set_pixel(x, y, colour2)
                     sense.set_pixel((7-x), y, colour2)
-                time.sleep(0.2)
+                time.sleep(0.1)
+
         time.sleep(1)
         sense.clear()
     except KeyboardInterrupt:
