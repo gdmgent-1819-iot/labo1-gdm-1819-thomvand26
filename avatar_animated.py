@@ -1,10 +1,8 @@
 from random import randint
 from sense_hat import SenseHat
-import sys
-import time
+from time import sleep
 
 sense = SenseHat()
-
 
 while True:
     try:
@@ -21,8 +19,8 @@ while True:
                     sense.set_pixel(x, y, colour2)
                     sense.set_pixel((7-x), y, colour2)
 
-        time.sleep(3)
+        sleep(3)
         sense.clear()
     except KeyboardInterrupt:
         sense.clear()
-        sys.exit()
+        quit()
