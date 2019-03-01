@@ -1,7 +1,7 @@
 from random import randint
 from sense_hat import SenseHat
 import sys
-from time
+import time
 
 sense = SenseHat()
 
