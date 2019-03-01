@@ -1,15 +1,14 @@
 from sense_hat import SenseHat
-import sys
-import time
+from time import sleep
 
 sense = SenseHat()
 
-white = (250, 250, 250)
-zero = (0, 0, 0)
-red = (250, 0, 0)
-skin = (240, 100, 75)
 blue = (0, 0, 255)
 brown = (100, 50, 30)
+red = (250, 0, 0)
+skin = (240, 100, 75)
+white = (250, 250, 250)
+zero = (0, 0, 0)
 
 normalPose = [
     zero, zero, red, red, red, zero, zero, zero,
@@ -43,7 +42,7 @@ while True:
     try:
         normal()
         sense.stick.direction_up = jump
-        time.sleep(1)
+        sleep(1)
     except KeyboardInterrupt:
         sense.clear()
-        sys.exit()
+        quit()
