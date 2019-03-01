@@ -1,7 +1,6 @@
 from random import randint
 from sense_hat import SenseHat
-import sys
-import time
+from time import sleep
 
 sense = SenseHat()
 rectColour = (150,150,150)
@@ -44,7 +43,7 @@ def shrink():
 
 
 createRect(currentProperties[0], currentProperties[1], currentProperties[2], currentProperties[3])
-time.sleep(0.5)
+sleep(0.5)
 sense.clear()
 
 while True:
@@ -55,8 +54,8 @@ while True:
             shrink()
             
         createRect(currentProperties[0], currentProperties[1], currentProperties[2], currentProperties[3])
-        time.sleep(0.5)
+        sleep(0.5)
         sense.clear()
     except KeyboardInterrupt:
         sense.clear()
-        sys.exit()
+        quit()
