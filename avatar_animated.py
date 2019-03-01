@@ -21,7 +21,7 @@ while True:
                     sense.set_pixel(x, y, colour2)
                     sense.set_pixel((7-x), y, colour2)
 
-        time.sleep(2)
+        time.sleep(3)
         sense.clear()
     except KeyboardInterrupt:
         sense.clear()
